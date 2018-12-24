@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Logged in</title>
+    </head>
+    <body>
+        <h1>You are logged in</h1>
+        <p th:utext="|Welcome, ${name}|">welcome</p> 
+        <b>Name:</b> <span th:utext="${name}">name</span><br />
+        <b>Address:</b> <span th:utext="${address}">address</span><br />
+        <b>Email:</b> <span th:utext="${email}">email</span><br />
+        <form action="#" th:action="@{/loggedin}" method="POST">
+                <p>Password: <input type="password" name="password" th:value="${password}"/></p>
+                <p><input type="hidden" name="id" th:value="${id}"/></p><br /><br />
+                <p><input type="submit" value="Change password"/></p>
+        </form>
+        <a href="/login">Click here to log out</a>
+    </body>
+</html>
